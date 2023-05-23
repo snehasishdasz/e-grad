@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Quicksand:wght@600&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+/* font-family: 'Quicksand', sans-serif;
+font-family: 'Roboto', sans-serif; */
+}
+
+  body{
+    min-height: 100%;
+  }
+  .d-flex{
+    margin-left: 120px;
+  }
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(89, 130, 251, 0.7),rgba(21, 32, 77, 0.7)),url(images/banner3.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* This is use for center the nav bar */
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: center;
+    align-items: center;
+}
+nav img{
+    width: 59px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 135x;
+}
+/* Hover effect style */
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+nav .fa{
+    display: none;
+}
+@media(max-width:700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        /* display: block; */
+        display: flex;
+        flex-direction: row;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: white;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 22px;
+    }
+    .nav-links ul{
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .d-flex{
+        margin-left: 1px; 
+        position: absolute;
+        top: 10%;
+    }
+
+    @media(min-width:704px){
+         ul li{
+            color: black;
+         }
+    }
+    
+}
+</style>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo9.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="./e-exam.html" target="_blank">e-Exam</a></li>
+                    <li><a href="./test.html">e-Repository</a></li>
+                    <li><a href="">Openforum</a></li>
+                    <li><a href="">MyWall</a></li>
+                    <li><a href="">Sign In</a></li>
+                    <li><a href="">Register</a></li>
+                </ul>
+            </div>
+            <form class="d-flex"> <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"> <button type="button" class="btn btn-danger">Search</button> </form>
+            <!-- <div class="input-group">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary">search</button>
+              </div> -->
+            <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <script>
+        var navLinks =  document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>
